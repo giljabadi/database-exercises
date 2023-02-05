@@ -1,9 +1,29 @@
-USE employees;
+use employees;
 
-SELECT DISTINCT title FROM titles;
+select distinct title
+from titles;
 
-SELECT DISTINCT first_name, last_name FROM employees WHERE last_name LIKE 'E%' AND last_name LIKE '%E';
+select last_name
+from employees
+where last_name like 'e%e'
+group by last_name;
 
-SELECT DISTINCT first_name, last_name FROM employees WHERE last_name LIKE 'q%' AND last_name NOT LIKE 'qu%';
+select first_name,last_name
+from employees
+where last_name like 'e%e'
+group by first_name, last_name;
 
+select distinct last_name
+from employees
+where last_name like '%q%' and last_name not like '%qu%';
+
+select COUNT(last_name),last_name
+from employees
+where last_name like '%q%' and last_name not like '%qu%'
+group by last_name;
+
+select COUNT(*),gender
+from employees
+where first_name in('Irena','Vidya','Maya')
+group by gender;
 
